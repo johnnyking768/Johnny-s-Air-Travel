@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnny's Air Travel - Your Dream Vacation Awaits</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-plane"></i>
+                <span>Johnny's Air</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Explore breathtaking destinations around the world with our curated travel packages</p>
+            <button class="cta-button" onclick="scrollToSection('packages')">
+                Explore Packages
+            </button>
+        </div>
+        <div class="hero-search">
+            <div class="search-container">
+                <h3>Find Your Perfect Trip</h3>
+                <form class="search-form">
+                    <div class="form-group">
+                        <label>Destination</label>
+                        <select id="destination">
+                            <option value="">Select Destination</option>
+                            <option value="paris">Paris, France</option>
+                            <option value="tokyo">Tokyo, Japan</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="maldives">Maldives</option>
+                            <option value="santorini">Santorini, Greece</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-in</label>
+                        <input type="date" id="checkin">
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out</label>
+                        <input type="date" id="checkout">
+                    </div>
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select id="guests">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4+ Guests</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card" data-destination="paris">
+                    <img src="img/france.jpg" alt="Paris">
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p>The City of Light awaits with its romantic charm</p>
+                        <span class="price">From $1,299</span>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="tokyo">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=300&fit=crop" alt="Tokyo">
+                    <div class="card-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Experience the perfect blend of tradition and modernity</p>
+                        <span class="price">From $1,599</span>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="bali">
+                    <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=300&fit=crop" alt="Bali">
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Tropical paradise with stunning beaches and culture</p>
+                        <span class="price">From $899</span>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="maldives">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Maldives">
+                    <div class="card-content">
+                        <h3>Maldives</h3>
+                        <p>Luxury overwater villas in crystal clear waters</p>
+                        <span class="price">From $2,499</span>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="santorini">
+                    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=300&fit=crop" alt="Santorini">
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <p>Breathtaking sunsets and white-washed buildings</p>
+                        <span class="price">From $1,199</span>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="dubai">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop" alt="Dubai">
+                    <div class="card-content">
+                        <h3>Dubai, UAE</h3>
+                        <p>Luxury shopping and ultramodern architecture</p>
+                        <span class="price">From $1,799</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Packages -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2 class="section-title">Travel Packages</h2>
+            <div class="package-filters">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+                <button class="filter-btn" data-filter="adventure">Adventure</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="beach">Beach</button>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card" data-category="luxury beach">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=250&fit=crop" alt="Luxury Beach Resort">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Maldives Luxury Escape</h3>
+                            <span class="package-duration">7 Days / 6 Nights</span>
+                        </div>
+                        <p>Experience ultimate luxury in overwater villas with private pools and world-class spa treatments.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-plane"></i> Flights Included</span>
+                            <span><i class="fas fa-utensils"></i> All Meals</span>
+                            <span><i class="fas fa-spa"></i> Spa Access</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$3,999</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card" data-category="cultural">
+                    <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=400&h=250&fit=crop" alt="Japan Cultural Tour">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Japan Cultural Discovery</h3>
+                            <span class="package-duration">10 Days / 9 Nights</span>
+                        </div>
+                        <p>Immerse yourself in Japanese culture, from ancient temples to modern Tokyo districts.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-plane"></i> Flights Included</span>
+                            <span><i class="fas fa-map-marked-alt"></i> Guided Tours</span>
+                            <span><i class="fas fa-train"></i> JR Pass</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$2,799</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card" data-category="adventure">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Bali Adventure">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Bali Adventure Trek</h3>
+                            <span class="package-duration">8 Days / 7 Nights</span>
+                        </div>
+                        <p>Explore Bali's volcanic landscapes, rice terraces, and hidden waterfalls on this adventure-packed trip.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-mountain"></i> Volcano Hiking</span>
+                            <span><i class="fas fa-swimmer"></i> Water Sports</span>
+                            <span><i class="fas fa-camera"></i> Photo Tours</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$1,599</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card" data-category="luxury cultural">
+                    <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=400&h=250&fit=crop" alt="Paris Luxury">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Paris Luxury Experience</h3>
+                            <span class="package-duration">6 Days / 5 Nights</span>
+                        </div>
+                        <p>Discover Paris in style with luxury accommodations, private tours, and fine dining experiences.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-crown"></i> 5-Star Hotels</span>
+                            <span><i class="fas fa-wine-glass"></i> Wine Tasting</span>
+                            <span><i class="fas fa-palette"></i> Art Tours</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$2,299</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card" data-category="beach">
+                    <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400&h=250&fit=crop" alt="Santorini Beach">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Santorini Sunset Romance</h3>
+                            <span class="package-duration">5 Days / 4 Nights</span>
+                        </div>
+                        <p>Romantic getaway with stunning sunsets, wine tours, and beautiful beaches in the Greek islands.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-heart"></i> Romantic Dinners</span>
+                            <span><i class="fas fa-wine-bottle"></i> Winery Tours</span>
+                            <span><i class="fas fa-ship"></i> Boat Trips</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$1,899</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card" data-category="luxury adventure">
+                    <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&h=250&fit=crop" alt="Dubai Adventure">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Dubai Desert & City</h3>
+                            <span class="package-duration">6 Days / 5 Nights</span>
+                        </div>
+                        <p>Experience the best of Dubai with desert safaris, luxury shopping, and world-class attractions.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-building"></i> Burj Khalifa</span>
+                            <span><i class="fas fa-shopping-bag"></i> Shopping Tours</span>
+                            <span><i class="fas fa-sun"></i> Desert Safari</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">$2,599</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Johnny's Air Travel?</h2>
+                    <p>With over 16 years of experience in the travel industry, we've helped thousands of travelers create unforgettable memories around the world.</p>
+                    <div class="features-list">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Award-Winning Service</h4>
+                                <p>Recognized for excellence in customer service and travel experiences</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <h4>Global Network</h4>
+                                <p>Partnerships with hotels and airlines worldwide for the best deals</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock customer support wherever your travels take you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-label">Happy Travelers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="150">0</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="98">0</span>
+                        <span class="stat-label">% Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get Travel Inspiration</h2>
+                <p>Subscribe to our newsletter for exclusive deals and travel tips</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>No 16 Dada Ataranshe Close </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+234 9161282010</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@johnny's air.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>Johnny's Air</span>
+                    </div>
+                    <p>Creating unforgettable travel experiences since 2008. Your adventure starts here.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Flight Booking</a></li>
+                        <li><a href="#">Hotel Reservation</a></li>
+                        <li><a href="#">Car Rental</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Johnny's Air Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
